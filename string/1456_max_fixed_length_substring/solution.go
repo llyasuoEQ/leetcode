@@ -1,6 +1,8 @@
 package max_fixed_length_substring
 
-import "math"
+import (
+	"math"
+)
 
 func isVowel(c string) int {
 	if c == "a" || c == "e" || c == "i" || c == "o" || c == "u" {
