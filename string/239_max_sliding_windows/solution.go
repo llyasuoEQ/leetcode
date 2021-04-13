@@ -12,7 +12,7 @@ func maxSlidingWindow1(nums []int, k int) []int {
 	if k > numsLen || k < 1 {
 		return []int{}
 	}
-	res := make([]int, 1, numsLen-k+1)
+	res := make([]int, 0, numsLen-k+1)
 	left := 0
 	right := k - 1
 	for right < numsLen {
@@ -44,7 +44,7 @@ func maxSlidingWindow2(nums []int, k int) []int {
 	heap.Init(h)
 
 	numsLen := len(nums)
-	res := make([]int, 1, numsLen-k+1)
+	res := make([]int, 0, numsLen-k+1)
 	res[0] = nums[h.IntSlice[0]]
 
 	for i := k; i < numsLen; i++ {

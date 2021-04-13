@@ -11,6 +11,7 @@ func TestMaxSlidingWindow1(t *testing.T) {
 	k := 3
 
 	expect := []int{3, 3, 5, 5, 6, 7}
+
 	actual := maxSlidingWindow1(nums, k)
 	assert.Equal(t, expect, actual, "maxSlidingWindow1 execute error")
 }
