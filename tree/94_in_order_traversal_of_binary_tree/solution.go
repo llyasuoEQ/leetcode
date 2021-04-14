@@ -8,8 +8,14 @@ type TreeNode struct {
 
 // 递归的方式实现
 func inorderTraversal(root *TreeNode) []int {
-
-	return nil
+	var res []int
+	if root == nil {
+		return res
+	}
+	res = append(res, inorderTraversal(root.Left)...)
+	res = append(res, root.Val)
+	res = append(res, inorderTraversal(root.Right)...)
+	return res
 }
 
-// 遍历的方式
+// TODO 遍历的方式
