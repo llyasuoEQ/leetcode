@@ -1,2 +1,2 @@
 # leetcode
-leetcode golang 刷题记录
+leetcode golang 题解
