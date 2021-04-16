@@ -35,3 +35,12 @@ func height(root *TreeNode) int {
 	}
 	return rHeight
 }
+
+func height1(root *TreeNode) float64 {
+	if root == nil {
+		return 0
+	}
+	lHeight := height1(root.Left) + 1
+	rHeight := height1(root.Right) + 1
+	return math.Max(lHeight, rHeight)
+}
