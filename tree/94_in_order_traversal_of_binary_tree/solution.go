@@ -22,7 +22,7 @@ func inorderTraversal1(root *TreeNode) []int {
 }
 
 // 方法二：
-// 遍历的方式
+// 非递归方法
 // 利用栈的思想：后进先出
 func inorderTraversal2(root *TreeNode) []int {
 	var res []int
@@ -43,3 +43,6 @@ func inorderTraversal2(root *TreeNode) []int {
 	}
 	return res
 }
+
+// 方法三：
+// 非递归遍历方法，morris遍历

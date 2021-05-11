@@ -6,6 +6,7 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
+// 方法一：
 // 递归实现
 func preorderTraversal(root *TreeNode) []int {
 	var res []int
@@ -23,3 +24,9 @@ func preorderTraversal2(root *TreeNode) []int {
 	var res []int
 	return res
 }
+
+// 方法二：
+// 非递归实现
+
+// 方法三：
+// 非递归实现，morris遍历

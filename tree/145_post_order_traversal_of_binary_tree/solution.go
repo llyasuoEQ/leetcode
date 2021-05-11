@@ -6,6 +6,7 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
+// 方法一：
 // 递归实现
 func postorderTraversal(root *TreeNode) []int {
 	var res []int
@@ -18,8 +19,8 @@ func postorderTraversal(root *TreeNode) []int {
 	return res
 }
 
-// TODO 进阶 利用迭代的方式实现
-func postorderTraversal2(root *TreeNode) []int {
-	var res []int
-	return res
-}
+// 方法二：
+// 非递归实现
+
+// 方法三：
+// 非递归实现，morris遍历
