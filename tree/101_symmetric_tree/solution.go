@@ -25,5 +25,22 @@ func check(p, q *TreeNode) bool {
 // 方法二：
 // 迭代方法
 func isSymmetric2(root *TreeNode) bool {
-	return false
+	p, q := root, root
+	queue := []*TreeNode{}
+	queue = append(queue, p, q)
+	for len(queue) > 0 {
+		p, q := queue[0], queue[1]
+		queue = queue[2:]
+		if p == nil && q == nil {
+			continue
+		}
+		if p == nil || q == nil {
+			return false
+		}
+		if p.Val != q.Val {
+			return false
+		}
+		queue = append(queue, p.Right, q.Left, p.Left, q.Right)
+	}
+	return true
 }
