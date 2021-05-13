@@ -50,6 +50,7 @@ func buildTree2(preorder []int, inorder []int) *TreeNode {
 		preorderVal := preorder[i]
 		node := stack[len(stack)-1]
 		if node.Val != inorder[inorderIndex] {
+			// 左节点
 			node.Left = &TreeNode{
 				Val:   preorderVal,
 				Left:  nil,
@@ -57,6 +58,7 @@ func buildTree2(preorder []int, inorder []int) *TreeNode {
 			}
 			stack = append(stack, node.Left)
 		} else {
+			// 右节点
 			for len(stack) > 0 && stack[len(stack)-1].Val == inorder[inorderIndex] {
 				node = stack[len(stack)-1]
 				stack = stack[:len(stack)-1]
