@@ -97,5 +97,10 @@ func min(a, b int) int {
 	return b
 }
 
-// [1]
-// [2]
+// 方法三：
+// 划分数组
+// 时间复杂度：O(log(m+n))
+// 空间复杂度：O(1)
+func findMedianSortedArrays3(nums1 []int, nums2 []int) float64 {
+	return 0
+}
