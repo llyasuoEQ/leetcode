@@ -65,6 +65,8 @@ func isIndexOfArray(cur []int, arr [][]int) bool {
 
 // 方法二：
 // 排序+双指针法
+// 时间复杂度：O(n^2)
+// 空间复杂度：O(1)
 func threeSum2(nums []int) [][]int {
 	var res [][]int
 	length := len(nums)
