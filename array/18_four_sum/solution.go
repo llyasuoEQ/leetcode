@@ -1,6 +1,8 @@
 package four_sum
 
-import "sort"
+import (
+	"sort"
+)
 
 // 前后指针法 - O(N^2) 有些边界条件无法满足，放弃
 // func fourSum(nums []int, target int) [][]int {
