@@ -44,5 +44,3 @@ func inorderTraversal2(root *TreeNode) []int {
 	return res
 }
 
-// 方法三：
-// 非递归遍历方法，morris遍历

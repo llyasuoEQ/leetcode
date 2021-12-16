@@ -81,10 +81,10 @@ func getSortIndexKey(nums1 []int, nums2 []int, k int) int {
 		nIndex2 := min(half+index2, len(nums2)) - 1
 		p1, p2 := nums1[nIndex1], nums2[nIndex2]
 		if p1 <= p2 {
-			k -= (nIndex1 - index1 + 1)
+			k -= nIndex1 - index1 + 1
 			index1 = nIndex1 + 1
 		} else {
-			k -= (nIndex2 - index2 + 1)
+			k -= nIndex2 - index2 + 1
 			index2 = nIndex2 + 1
 		}
 	}
