@@ -1,11 +1,13 @@
 package string_to_integer_atoi
 
-func myAtoi(s string) int {
-	if s == "" {
-		return 0
-	}
-	i, n := 0, len(s)
-	// 忽略前导空格
+import (
+	"testing"
 
-	return 0
+	"github.com/stretchr/testify/assert"
+)
+
+func TestMyAtoi(t *testing.T) {
+	a := "-91283472332"
+	expect := -2147483648
+	assert.Equal(t, expect, myAtoi(a), "myAtoi execute failed")
 }
