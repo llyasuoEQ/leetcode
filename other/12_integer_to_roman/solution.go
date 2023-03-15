@@ -71,6 +71,41 @@ func intToRoman(num int) string {
 		num = num % divisor
 		divisor /= 10
 	}
-
 	return res
+}
+
+type RomaItem struct {
+	Value int
+	Roma  string
+}
+
+var romaList = []RomaItem{
+	{Value: 1000, Roma: "M"},
+	{Value: 900, Roma: "CM"},
+	{Value: 600, Roma: "DC"},
+	{Value: 500, Roma: "D"},
+	{Value: 400, Roma: "CD"},
+	{Value: 100, Roma: "C"},
+	{Value: 90, Roma: "XC"},
+	{Value: 60, Roma: "LX"},
+	{Value: 50, Roma: "L"},
+	{Value: 40, Roma: "XL"},
+	{Value: 10, Roma: "X"},
+	{Value: 9, Roma: "IX"},
+	{Value: 6, Roma: "VI"},
+	{Value: 5, Roma: "V"},
+	{Value: 4, Roma: "IV"},
+	{Value: 1, Roma: "I"},
+}
+
+// intToRoman2 依次递减方法
+func intToRoman2(num int) string {
+	var roma string
+	for _, v := range romaList {
+		for num >= v.Value && num > 0 {
+			num -= v.Value
+			roma += v.Roma
+		}
+	}
+	return roma
 }

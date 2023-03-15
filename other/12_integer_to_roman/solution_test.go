@@ -9,6 +9,8 @@ import (
 func TestIntToRoman(t *testing.T) {
 	num := 3
 	expect := "III"
-	actual := intToRoman(num)
-	assert.Equal(t, expect, actual, "intToToman execute failed")
+	actual1 := intToRoman(num)
+	actual2 := intToRoman2(num)
+	assert.Equal(t, expect, actual1, "intToToman execute failed")
+	assert.Equal(t, expect, actual2, "intToToman2 execute failed")
 }
