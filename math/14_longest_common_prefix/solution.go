@@ -25,3 +25,5 @@ func longestCommonPrefix(strs []string) string {
 
 	return string(res)
 }
+
+// TODO 利用二分法查找法求解
