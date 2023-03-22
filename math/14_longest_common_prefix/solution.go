@@ -1,6 +1,8 @@
 package longest_common_prefix
 
-import "math"
+import (
+	"math"
+)
 
 // longestCommonPrefix ...
 func longestCommonPrefix(strs []string) string {
@@ -26,4 +28,39 @@ func longestCommonPrefix(strs []string) string {
 	return string(res)
 }
 
-// TODO 利用二分法查找法求解
+// longestCommonPrefix2 利用二分法查找法求解
+func longestCommonPrefix2(strs []string) string {
+	if len(strs) < 1 {
+		return ""
+	}
+
+	// 寻找最小的字符串
+	minLen := len(strs[0])
+	for _, v := range strs {
+		if len(v) < minLen {
+			minLen = len(v)
+		}
+	}
+	// 判断是否为子串
+	isPrefix := func(length int) bool {
+		temp, count := strs[0][:length], len(strs)
+		for i := 1; i < count; i++ {
+			if strs[i][:length] != temp {
+				return false
+			}
+		}
+		return true
+	}
+
+	left, right := 0, minLen
+	for left < right {
+		mid := (left + right + 1) / 2
+		if isPrefix(mid) {
+			left = mid
+		} else {
+			right = mid - 1
+		}
+	}
+
+	return strs[0][:left]
+}

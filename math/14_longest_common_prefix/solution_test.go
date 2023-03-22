@@ -10,4 +10,6 @@ func TestLongestCommonPrefix(t *testing.T) {
 	strs := []string{"flower", "flow", "flight"}
 	expect := "fl"
 	assert.Equal(t, expect, longestCommonPrefix(strs), "longestCommonPrefix execute failed")
+	assert.Equal(t, expect, longestCommonPrefix2(strs), "longestCommonPrefix execute failed")
+
 }
