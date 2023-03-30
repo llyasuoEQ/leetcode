@@ -47,3 +47,5 @@ func removeNthFromEnd(head *ListNode, n int) *ListNode {
 	}
 	return head
 }
+
+// TODO 进阶，一遍遍历完成删除
