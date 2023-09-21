@@ -13,10 +13,7 @@ func newListNode(val int, next *ListNode) *ListNode {
 }
 
 func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
-	node := &ListNode{
-		Val:  0,
-		Next: nil,
-	}
+	node := &ListNode{}
 	head := node
 	for list1 != nil && list2 != nil {
 		if list1.Val < list2.Val {
