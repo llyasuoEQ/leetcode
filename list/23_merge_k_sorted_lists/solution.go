@@ -13,6 +13,7 @@ func (l *ListNode) String() string {
 		res = res + fmt.Sprint(l.Val) + "->"
 		l = l.Next
 	}
+	res += "nil"
 	return res
 }
 
@@ -69,7 +70,7 @@ func mergeBacktrack(lists []*ListNode, left, right int) *ListNode {
 		return lists[left]
 	}
 	mid := (left + right) / 2
-	list1 := mergeBacktrack(lists, 0, mid)
+	list1 := mergeBacktrack(lists, left, mid)
 	list2 := mergeBacktrack(lists, mid+1, right)
 	return mergeTwoList(list1, list2)
 }
