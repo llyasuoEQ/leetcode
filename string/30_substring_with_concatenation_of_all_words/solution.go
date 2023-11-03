@@ -56,7 +56,9 @@ func combine(prefix string, words []string, result *[]string, used map[string]bo
 
 // findSubstring2
 func findSubstring2(s string, words []string) []int {
-
+	if len(words) == 0 || len(words[0]) == 0 {
+		return []int{}
+	}
 	return nil
 }
 
