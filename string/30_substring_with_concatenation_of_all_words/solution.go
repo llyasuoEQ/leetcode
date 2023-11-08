@@ -54,55 +54,47 @@ func combine(prefix string, words []string, result *[]string, used map[string]bo
 	}
 }
 
-// findSubstring2
+// findSubstring2 滑动窗口解法
 func findSubstring2(s string, words []string) []int {
 	if len(words) == 0 || len(words[0]) == 0 {
 		return []int{}
 	}
-	return nil
+	wordLen := len(words[0])
+	totalLen := len(words) * wordLen
+	wordCount := make(map[string]int)
+
+	for _, word := range words {
+		wordCount[word]++
+	}
+
+	var result []int
+	// 滑动窗口的大小为单词长度，窗口每次滑动wordLen长度，所以遍历wordLen长度次
+	for i := 0; i < wordLen; i++ {
+		left, right := i, i
+		currentCount := make(map[string]int)
+
+		for right+wordLen < len(s) {
+			word := s[right : right+wordLen]
+			right = right + wordLen
+
+			if wordCount[word] == 0 { // 不在wordCount中，不满足子串规则
+				left = right
+				currentCount = make(map[string]int)
+			} else {
+				currentCount[word]++
+				// 去除重复，比如words=[af,ef], s = afafef，显然afaf不满足要去除第一个af
+				for currentCount[word] > wordCount[word] {
+					removeWord := s[left : left+wordLen]
+					currentCount[removeWord]--
+					left = left + wordLen
+				}
+
+				if (right - left) == totalLen {
+					result = append(result, left)
+				}
+			}
+		}
+	}
+
+	return result
 }
-
-// func findSubstring2(s string, words []string) []int {
-// 	if len(words) == 0 || len(words[0]) == 0 {
-// 		return []int{}
-// 	}
-
-// 	wordLen := len(words[0])
-// 	totalLen := len(words) * wordLen
-// 	wordCount := make(map[string]int)
-
-// 	for _, word := range words {
-// 		wordCount[word]++
-// 	}
-
-// 	result := []int{}
-
-// 	for i := 0; i < wordLen; i++ {
-// 		left, right := i, i
-// 		currentCount := make(map[string]int)
-
-// 		for right+wordLen <= len(s) {
-// 			word := s[right : right+wordLen]
-// 			right += wordLen
-
-// 			if wordCount[word] == 0 {
-// 				// Reset the window and counters
-// 				currentCount = make(map[string]int)
-// 				left = right
-// 			} else {
-// 				currentCount[word]++
-// 				for currentCount[word] > wordCount[word] {
-// 					removedWord := s[left : left+wordLen]
-// 					currentCount[removedWord]--
-// 					left += wordLen
-// 				}
-
-// 				if right-left == totalLen {
-// 					result = append(result, left)
-// 				}
-// 			}
-// 		}
-// 	}
-
-// 	return result
-// }
