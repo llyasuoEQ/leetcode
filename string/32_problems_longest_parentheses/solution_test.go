@@ -18,6 +18,10 @@ func TestLongestValidParentheses(t *testing.T) {
 			S:        "(()",
 			Expected: 2,
 		},
+		{
+			S:        "()",
+			Expected: 2,
+		},
 	}
 	for _, c := range testCases {
 		actual := longestValidParentheses(c.S)
