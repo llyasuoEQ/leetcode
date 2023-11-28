@@ -19,6 +19,21 @@ func TestMultiply(t *testing.T) {
 			Num2:     "3",
 			Expected: "6",
 		},
+		{
+			Num1:     "100",
+			Num2:     "100",
+			Expected: "10000",
+		},
+		{
+			Num1:     "123",
+			Num2:     "456",
+			Expected: "56088",
+		},
+		{
+			Num1:     "99",
+			Num2:     "9",
+			Expected: "891",
+		},
 	}
 	for _, testCase := range testCases {
 		actual := multiply(testCase.Num1, testCase.Num2)
