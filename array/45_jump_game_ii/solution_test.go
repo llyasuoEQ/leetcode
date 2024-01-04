@@ -20,5 +20,8 @@ func TestJump(t *testing.T) {
 		actual := jump(testCase.Nums)
 		assert.Equal(t, testCase.Expected, actual,
 			"trap2 execute error: Nums[%v], actual[%d], expected[%d]", testCase.Nums, actual, testCase.Expected)
+		actual2 := jump2(testCase.Nums)
+		assert.Equal(t, testCase.Expected, actual2,
+			"trap2 execute error: Nums[%v], actual2[%d], expected[%d]", testCase.Nums, actual2, testCase.Expected)
 	}
 }
