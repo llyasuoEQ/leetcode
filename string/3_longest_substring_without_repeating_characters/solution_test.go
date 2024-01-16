@@ -7,8 +7,8 @@ import (
 )
 
 func TestLengthOfLongestSubstring(t *testing.T) {
-	a := " "
-	expect := 0
+	a := "abcabcbb"
+	expect := 3
 	actual := lengthOfLongestSubstring(a)
 	assert.Equal(t, expect, actual, "lengthOfLongestSubstring execute error")
 }
