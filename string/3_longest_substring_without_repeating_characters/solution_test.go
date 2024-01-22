@@ -11,4 +11,6 @@ func TestLengthOfLongestSubstring(t *testing.T) {
 	expect := 3
 	actual := lengthOfLongestSubstring(a)
 	assert.Equal(t, expect, actual, "lengthOfLongestSubstring execute error")
+	actual1 := lengthOfLongestSubstring1(a)
+	assert.Equal(t, expect, actual1, "lengthOfLongestSubstring1 execute error")
 }

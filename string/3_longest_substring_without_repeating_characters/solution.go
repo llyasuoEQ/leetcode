@@ -1,21 +1,22 @@
 package longest_substring_without_repeating_characters
 
-// 判断重复字符
+// lengthOfLongestSubstring 判断重复字符
 func lengthOfLongestSubstring(s string) int {
-	sR := []rune(s)
+	sR := []rune(s) // 类型转换
 	sMap := make(map[rune]int)
 	slen := len(s)
-	r, ans := 0, 0
+	r, ans := 0, 0 //
 	for i := 0; i < slen; i++ {
 		if i != 0 {
 			// 左指针向右移动一格，移除一个字符
 			delete(sMap, sR[i-1])
 		}
+		// 判断i-r之间是否不重复，一旦出现重复就跳出循环
 		for r < slen && sMap[sR[r]] == 0 {
 			sMap[sR[r]]++
 			r++
 		}
-		ans = max(ans, r-i+1)
+		ans = max(ans, r-i)
 	}
 	return ans
 }
