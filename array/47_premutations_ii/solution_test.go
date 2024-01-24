@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestPermute(t *testing.T) {
+func TestPermuteUnique(t *testing.T) {
 	testCases := []struct {
 		Nums     []int
 		Expected [][]int
@@ -38,6 +38,6 @@ func TestPermute(t *testing.T) {
 	for _, testCase := range testCases {
 		actual := permuteUnique(testCase.Nums)
 		assert.Equal(t, testCase.Expected, actual,
-			"trap2 execute error: Nums[%v], actual[%d], expected[%d]", testCase.Nums, actual, testCase.Expected)
+			"permuteUnique execute error: Nums[%v], actual[%d], expected[%d]", testCase.Nums, actual, testCase.Expected)
 	}
 }

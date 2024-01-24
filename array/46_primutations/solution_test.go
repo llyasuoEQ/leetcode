@@ -38,6 +38,6 @@ func TestPermute(t *testing.T) {
 	for _, testCase := range testCases {
 		actual := permute(testCase.Nums)
 		assert.Equal(t, testCase.Expected, actual,
-			"trap2 execute error: Nums[%v], actual[%d], expected[%d]", testCase.Nums, actual, testCase.Expected)
+			"permute execute error: Nums[%v], actual[%d], expected[%d]", testCase.Nums, actual, testCase.Expected)
 	}
 }
