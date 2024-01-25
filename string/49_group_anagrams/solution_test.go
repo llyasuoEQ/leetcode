@@ -1,10 +1,8 @@
 package group_anagrams
 
 import (
-	"fmt"
+	"reflect"
 	"testing"
-
-	"github.com/bmizerany/assert"
 )
 
 func TestGroupAnagrams(t *testing.T) {
@@ -29,8 +27,9 @@ func TestGroupAnagrams(t *testing.T) {
 	}
 	for _, testCase := range testCases {
 		actual := groupAnagrams(testCase.Strs)
-		assert.Equal(t, testCase.Expected, actual,
-			fmt.Sprintf("groupAnagrams execute failed: Strs[%v],  expected[%v], actual[%v]",
-				testCase.Strs, testCase.Expected, actual))
+		if reflect.DeepEqual(testCase.Expected, actual) {
+			t.Errorf("groupAnagrams execute failed: Strs[%v],  expected[%v], actual[%v]",
+				testCase.Strs, testCase.Expected, actual)
+		}
 	}
 }
