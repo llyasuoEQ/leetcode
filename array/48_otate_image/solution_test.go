@@ -3,7 +3,7 @@ package otate_image
 import (
 	"testing"
 
-	"github.com/bmizerany/assert"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestRotate(t *testing.T) {
@@ -44,7 +44,7 @@ func TestRotate(t *testing.T) {
 	}
 	for _, testCase := range testCases {
 		rotate(testCase.Matrix)
-		assert.Equal(t, testCase.Expected,
-			"rotate execute error: Matrix[%v], expected[%d]", testCase.Matrix, testCase.Expected)
+		assert.Equal(t, testCase.Expected, testCase.Matrix,
+			"rotate execute error: Matrix[%v], expected[%v]", testCase.Matrix, testCase.Expected)
 	}
 }
