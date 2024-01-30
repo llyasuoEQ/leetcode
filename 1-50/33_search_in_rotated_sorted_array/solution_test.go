@@ -3,7 +3,7 @@ package search_in_rotated_sorted_array
 import (
 	"testing"
 
-	"github.com/bmizerany/assert"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestSearch(t *testing.T) {

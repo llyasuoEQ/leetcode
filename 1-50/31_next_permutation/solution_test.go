@@ -3,7 +3,7 @@ package next_permutation
 import (
 	"testing"
 
-	"github.com/bmizerany/assert"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestNextPermutation(t *testing.T) {
