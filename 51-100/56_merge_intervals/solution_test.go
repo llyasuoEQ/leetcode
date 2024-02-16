@@ -43,7 +43,7 @@ func TestMerge(t *testing.T) {
 	}
 	for _, testCase := range testCases {
 		actual := merge(testCase.Intervals)
-		assert.Equal(t, testCase.Expected, actual, fmt.Sprintf("canJump execute error: intervals[%v], expected[%v], actual[%v]",
+		assert.Equal(t, testCase.Expected, actual, fmt.Sprintf("merge execute error: intervals[%v], expected[%v], actual[%v]",
 			testCase.Intervals, testCase.Expected, actual))
 	}
 }
