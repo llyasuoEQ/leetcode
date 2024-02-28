@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestMinPathSum(t *testing.T) {
+func TestIsNumber(t *testing.T) {
 	testCases := []struct {
 		S        string
 		Expected bool
