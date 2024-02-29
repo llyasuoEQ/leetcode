@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestPlusOne(t *testing.T) {
+func TestAddBinary(t *testing.T) {
 	testCases := []struct {
 		A        string
 		B        string
