@@ -25,7 +25,14 @@ func TestReorderList(t *testing.T) {
 		},
 	}
 	for _, testCase := range testCases {
-		// reorderList(testCase.Head)
+		reorderList(testCase.Head)
+		t.Log(testCase.Head)
+		assert.Equal(t, testCase.Expected, testCase.Head, fmt.Sprintf("reorderList execute error: head[%v], expected[%v]",
+			testCase.Head, testCase.Expected))
+		testCase.Head = base.NewListNode(1,
+			base.NewListNode(2,
+				base.NewListNode(3,
+					base.NewListNode(4, nil))))
 		reordrList2(testCase.Head)
 		t.Log(testCase.Head)
 		assert.Equal(t, testCase.Expected, testCase.Head, fmt.Sprintf("reorderList execute error: head[%v], expected[%v]",
