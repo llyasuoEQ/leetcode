@@ -1,14 +1,10 @@
 package preorder_traversal_binary_tree
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
+import "myProject/leetcode/base"
 
 // 方法一：
 // 递归实现
-func preorderTraversal(root *TreeNode) []int {
+func preorderTraversal(root *base.TreeNode) []int {
 	var res []int
 	if root == nil {
 		return res
@@ -19,14 +15,29 @@ func preorderTraversal(root *TreeNode) []int {
 	return res
 }
 
-// TODO 迭代实现
-func preorderTraversal2(root *TreeNode) []int {
+// TODO 迭代实现，利用栈先进先出的思路解决
+func preorderTraversal2(root *base.TreeNode) []int {
+	if root == nil {
+		return nil
+	}
 	var res []int
+	stack := []*base.TreeNode{root}
+	for len(stack) > 0 {
+		node := stack[len(stack)-1]
+		stack = stack[:len(stack)-1]
+		res = append(res, node.Val)
+
+		// 先入先出，先放右子树，然后放左子树
+		if node.Right != nil {
+			stack = append(stack, node.Right)
+		}
+		if node.Left != nil {
+			stack = append(stack, node.Left)
+		}
+	}
+
 	return res
 }
-
-// 方法二：
-// 非递归实现
 
 // 方法三：
 // 非递归实现，morris遍历

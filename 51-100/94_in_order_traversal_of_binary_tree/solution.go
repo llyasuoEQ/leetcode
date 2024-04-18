@@ -1,16 +1,12 @@
 package in_order_traversal_of_binary_tree
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
+import "myProject/leetcode/base"
 
 // 左 -> 根 -> 右
 // 方法一：
 // 递归的方式实现
 // 时间复杂度：O(N)
-func inorderTraversal1(root *TreeNode) []int {
+func inorderTraversal1(root *base.TreeNode) []int {
 	var res []int
 	if root == nil {
 		return res
@@ -24,13 +20,13 @@ func inorderTraversal1(root *TreeNode) []int {
 // 方法二：
 // 非递归方法
 // 利用栈的思想：后进先出
-func inorderTraversal2(root *TreeNode) []int {
-	var res []int
+func inorderTraversal2(root *base.TreeNode) []int {
 	if root == nil {
-		return res
+		return nil
 	}
+	var res []int
 	temNode := root
-	stack := []*TreeNode{}
+	stack := []*base.TreeNode{}
 	for len(stack) > 0 || temNode != nil {
 		for temNode != nil {
 			stack = append(stack, temNode)
@@ -43,4 +39,3 @@ func inorderTraversal2(root *TreeNode) []int {
 	}
 	return res
 }
-
