@@ -10,8 +10,13 @@ type ListNode struct {
 func (node *ListNode) String() string {
 	temp := node
 	res := ""
+	loopMap := make(map[*ListNode]bool)
 	for temp != nil {
 		res += (fmt.Sprint(temp.Val) + "->")
+		if _, ok := loopMap[temp]; ok { // 说明是环
+			break
+		}
+		loopMap[temp] = true
 		temp = temp.Next
 	}
 	res += "nil"
